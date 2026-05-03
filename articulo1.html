@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nuevas medidas de seguridad vial en la región - Opinion Sur</title>
+
+  <!-- Fuente Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================
+       VARIABLES Y RESET
+    ============================================ */
+    :root {
+      --bg-gradient-1: #0f172a;
+      --bg-gradient-2: #1e293b;
+      --bg-gradient-3: #1a1a2e;
+      --card-bg: #ffffff;
+      --card-radius: 16px;
+      --glass-border: rgba(255, 255, 255, 0.12);
+      --accent-blue: #3b82f6;
+      --accent-red: #ef4444;
+      --text-white: #ffffff;
+      --text-dark: #1e293b;
+      --text-gray: #64748b;
+      --text-light-gray: #94a3b8;
+      --transition: all 0.3s ease;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, var(--bg-gradient-1) 0%, var(--bg-gradient-3) 50%, var(--bg-gradient-2) 100%);
+      color: var(--text-white);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* ============================================
+       HEADER / NAVEGACIÓN
+    ============================================ */
+    header {
+      width: 100%;
+      padding: 18px 40px;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--glass-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-white);
+    }
+
+    .brand-icon { font-size: 1.8rem; }
+
+    .brand-text h1 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #ffffff, #94a3b8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .brand-text span {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--text-light-gray);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    nav { display: flex; align-items: center; gap: 28px; }
+
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--glass-border);
+      border-radius: 10px;
+      color: var(--text-white);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: var(--transition);
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-back:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateX(-3px);
+    }
+
+    /* ============================================
+       CONTENEDOR DEL ARTÍCULO
+    ============================================ */
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 50px 40px 80px;
+    }
+
+    .article-card {
+      background: var(--card-bg);
+      border-radius: var(--card-radius);
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .article-img {
+      width: 100%;
+      aspect-ratio: 21/9;
+      object-fit: cover;
+      display: block;
+    }
+
+    .article-body {
+      padding: 45px 50px;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      font-size: 0.8rem;
+      color: var(--text-gray);
+      font-weight: 500;
+    }
+
+    .article-meta .tag {
+      background: var(--accent-blue);
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .article-body h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      line-height: 1.3;
+      margin-bottom: 28px;
+    }
+
+    .article-body .content p {
+      font-size: 1.05rem;
+      color: var(--text-gray);
+      line-height: 1.9;
+      margin-bottom: 20px;
+    }
+
+    .article-body .content p strong {
+      color: var(--text-dark);
+      font-weight: 700;
+    }
+
+    .article-body .content blockquote {
+      border-left: 4px solid var(--accent-blue);
+      padding: 20px 28px;
+      margin: 30px 0;
+      background: #f1f5f9;
+      border-radius: 0 12px 12px 0;
+      font-style: italic;
+      color: var(--text-dark);
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    /* ============================================
+       FOOTER
+    ============================================ */
+    footer {
+      width: 100%;
+      padding: 25px 40px;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-top: 1px solid var(--glass-border);
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 0.8rem;
+      color: var(--text-light-gray);
+    }
+
+    footer a {
+      color: var(--accent-blue);
+      text-decoration: none;
+    }
+
+    /* ============================================
+       RESPONSIVE
+    ============================================ */
+    @media (max-width: 768px) {
+      header { padding: 14px 20px; }
+      .header-inner { flex-direction: column; gap: 12px; }
+      main { padding: 30px 16px 50px; }
+      .article-body { padding: 30px 24px; }
+      .article-body h1 { font-size: 1.5rem; }
+      .article-img { aspect-ratio: 16/9; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-icon"></span>
+        <div class="brand-text">
+          <h1>OPINION SUR</h1>
+          <span>Multimedios</span>
+        </div>
+      </a>
+      <nav>
+        <a href="index.html" class="btn-back">← Volver al inicio</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ARTÍCULO -->
+  <main>
+    <article class="article-card">
+      <img
+        src="https://images.unsplash.com/photo-1504711434969-e33886168d6c?w=1200&h=514&fit=crop"
+        alt="Corte Suprema cierra caso del exfiscal Soto Basauren: Ministerio Público deberá pagar $91 millones de indemnización"
+        class="article-img"
+      />
+      <div class="article-body">
+        <div class="article-meta">
+          <span class="tag">Seguridad</span>
+          <span>3 de Mayo, 2026</span>
+        </div>
+
+        <h1>Corte Suprema cierra caso del exfiscal Soto Basauren: Ministerio Público deberá pagar $91 millones de indemnización</h1>
+
+        <div class="content">
+          <p>
+            <strong>La Corte Suprema puso punto final al caso del exfiscal Manuel Soto Basauren. El 29 de abril, la Cuarta Sala del máximo tribunal declaró inadmisible el recurso de unificación de jurisprudencia interpuesto por el Consejo de Defensa del Estado en representación del Ministerio Público, dejando firme la sentencia que estableció que la Fiscalía Regional de Magallanes vulneró la integridad psíquica y el derecho a la honra de Soto Basauren con ocasión de su despido. Como consecuencia, el Fisco deberá pagarle una indemnización de aproximadamente 91 millones de pesos.</strong>
+          </p>
+
+          <p>
+            El fallo cierra un largo proceso judicial que tuvo su origen en una demanda de tutela de derechos fundamentales presentada por el exfiscal. En primera instancia, el Juzgado de Letras del Trabajo de Punta Arenas acogió parcialmente la acción y condenó al Ministerio Público. La Corte de Apelaciones de Punta Arenas rechazó el recurso de nulidad interpuesto por la Fiscalía. El Consejo de Defensa del Estado intentó entonces la vía del recurso de unificación de jurisprudencia ante la Corte Suprema, que también fue desestimado.
+          </p>
+
+          <blockquote>
+            El tribunal supremo rechazó el recurso por razones formales en ambas materias planteadas. Respecto de la primera -la aplicación de los plazos de caducidad en tutelas laborales-, concluyó que el recurso incurría en un vicio de formalidad al intentar alterar hechos ya asentados por el tribunal de primera instancia a través de una causal incorrecta. Sobre la segunda -la exclusión de prueba testimonial en juicio-, estimó que no constituía un asunto jurídico que habilitara este tipo de recurso por no referirse al fondo del debate entre las partes.
+          </blockquote>
+
+          <p>
+            El abogado Fernando Leal Aravena, representante de Soto Basaure, recibió el fallo con satisfacción, pero fue enfático en que el cierre judicial no debería ser el único desenlace del caso. “Tomamos este fallo con mucha tranquilidad, entendiendo que acá estamos terminando un largo proceso en el cual se pudo establecer fehacientemente que la Fiscalía Regional de Magallanes, dirigida por Cristián Crisosto, persiguió y vulneró a un fiscal destacado como mi representado”, señaló.
+          </p>
+
+          <p>
+            Leal hizo un llamado directo al fiscal nacional, Ángel Valencia, para que tome medidas contra Crisosto. “Esperamos que el fiscal nacional inicie una investigación de rigor, porque no es posible que la indemnización que tiene que pagar ahora el Fisco de Chile a mi representado salga de arcas fiscales que pagan con sus impuestos todos los chilenos, como consecuencia de la responsabilidad del actual fiscal regional de Magallanes”, afirmó.
+          </p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 <a href="index.html">Opinion Sur Multimedios</a>. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>
