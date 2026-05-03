@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nuevas medidas de seguridad vial en la región - Opinion Sur</title>
+
+  <!-- Fuente Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================
+       VARIABLES Y RESET
+    ============================================ */
+    :root {
+      --bg-gradient-1: #0f172a;
+      --bg-gradient-2: #1e293b;
+      --bg-gradient-3: #1a1a2e;
+      --card-bg: #ffffff;
+      --card-radius: 16px;
+      --glass-border: rgba(255, 255, 255, 0.12);
+      --accent-blue: #3b82f6;
+      --accent-red: #ef4444;
+      --text-white: #ffffff;
+      --text-dark: #1e293b;
+      --text-gray: #64748b;
+      --text-light-gray: #94a3b8;
+      --transition: all 0.3s ease;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, var(--bg-gradient-1) 0%, var(--bg-gradient-3) 50%, var(--bg-gradient-2) 100%);
+      color: var(--text-white);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* ============================================
+       HEADER / NAVEGACIÓN
+    ============================================ */
+    header {
+      width: 100%;
+      padding: 18px 40px;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--glass-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-white);
+    }
+
+    .brand-icon { font-size: 1.8rem; }
+
+    .brand-text h1 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #ffffff, #94a3b8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .brand-text span {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--text-light-gray);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    nav { display: flex; align-items: center; gap: 28px; }
+
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--glass-border);
+      border-radius: 10px;
+      color: var(--text-white);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: var(--transition);
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-back:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateX(-3px);
+    }
+
+    /* ============================================
+       CONTENEDOR DEL ARTÍCULO
+    ============================================ */
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 50px 40px 80px;
+    }
+
+    .article-card {
+      background: var(--card-bg);
+      border-radius: var(--card-radius);
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .article-img {
+      width: 100%;
+      aspect-ratio: 21/9;
+      object-fit: cover;
+      display: block;
+    }
+
+    .article-body {
+      padding: 45px 50px;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      font-size: 0.8rem;
+      color: var(--text-gray);
+      font-weight: 500;
+    }
+
+    .article-meta .tag {
+      background: var(--accent-blue);
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .article-body h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      line-height: 1.3;
+      margin-bottom: 28px;
+    }
+
+    .article-body .content p {
+      font-size: 1.05rem;
+      color: var(--text-gray);
+      line-height: 1.9;
+      margin-bottom: 20px;
+    }
+
+    .article-body .content p strong {
+      color: var(--text-dark);
+      font-weight: 700;
+    }
+
+    .article-body .content blockquote {
+      border-left: 4px solid var(--accent-blue);
+      padding: 20px 28px;
+      margin: 30px 0;
+      background: #f1f5f9;
+      border-radius: 0 12px 12px 0;
+      font-style: italic;
+      color: var(--text-dark);
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    /* ============================================
+       FOOTER
+    ============================================ */
+    footer {
+      width: 100%;
+      padding: 25px 40px;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-top: 1px solid var(--glass-border);
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 0.8rem;
+      color: var(--text-light-gray);
+    }
+
+    footer a {
+      color: var(--accent-blue);
+      text-decoration: none;
+    }
+
+    /* ============================================
+       RESPONSIVE
+    ============================================ */
+    @media (max-width: 768px) {
+      header { padding: 14px 20px; }
+      .header-inner { flex-direction: column; gap: 12px; }
+      main { padding: 30px 16px 50px; }
+      .article-body { padding: 30px 24px; }
+      .article-body h1 { font-size: 1.5rem; }
+      .article-img { aspect-ratio: 16/9; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-icon"></span>
+        <div class="brand-text">
+          <h1>OPINION SUR</h1>
+          <span>Multimedios</span>
+        </div>
+      </a>
+      <nav>
+        <a href="index.html" class="btn-back">← Volver al inicio</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ARTÍCULO -->
+  <main>
+    <article class="article-card">
+      <img
+        src="https://cdn.lpa.cl/2026/05/4.-CADI-UMAG-KARENA-ESPINOZA-GL16-1-667x400.jpg"
+        alt="Corte Suprema cierra caso del exfiscal Soto Basauren: Ministerio Público deberá pagar $91 millones de indemnización"
+        class="article-img"
+      />
+      <div class="article-body">
+        <div class="article-meta">
+          <span class="tag">Judiciales</span>
+          <span>3 de Mayo, 2026</span>
+        </div>
+
+        <h1>Exdirectora del Cadi-Umag confirma ser testigo clave en causa penal contra la Fundación Hernando de Magallanes</h1>
+
+        <div class="content">
+          <p>
+            <strong>El jueves 30 de abril, en una sala del Juzgado de Garantía de Punta Arenas, el médico Alejandro Altamirano Mansilla escuchó los cargos que el Ministerio Público ha construido en casi tres años de investigación. Fraude de subvenciones como representante legal de la Fundación Hernando de Magallanes, seis convenios de asignación directa con el Gobierno Regional y cerca de $778 millones involucrados.</strong>
+          </p>
+
+          <p>
+            La fiscal regional Johanna Irribarra fue precisa al salir de la audiencia: hay al menos $20 millones en sobreprecios acreditados en la compra de materiales para uno de esos convenios, y las diligencias para establecer el perjuicio total siguen en curso. El tribunal decretó arraigo nacional para Altamirano y fijó seis meses de plazo investigativo.
+          </p>
+
+          <blockquote>
+            El fiscal regional Cristián Crisosto había anticipado el rumbo de la causa meses antes, en una entrevista en Radio Polar: “A partir de la formalización, se abre un plazo judicial de investigación donde se afina, donde se ajusta la investigación para poder posteriormente deducir la acusación. Lo importante es que estamos avanzando”. Y agregó un dato que el diputado Alejandro Riquelme -quien siendo consejero regional presentó la denuncia original- lleva repitiendo desde entonces: “La investigación continúa adelante con otras aristas”.
+          </blockquote>
+
+          <p>
+            La Fundación Hernando de Magallanes fue constituida el 22 de febrero de 2017 en Punta Arenas. Su objeto fundacional es la prevención y tratamiento del cáncer en la región. Según el certificado de directorio del Registro Civil vigente al momento de los convenios, la presidía Alejandro Patricio Altamirano Mansilla, médico cirujano especialista en Cirugía General titulado en la Universidad Austral de Chile, según acredita la Superintendencia de Salud.
+          </p>
+
+          <p>
+            Entre noviembre de 2021 y diciembre de 2022, el Gobierno Regional suscribió con esta fundación seis convenios de asignación directa. Los proyectos incluían apoyo epidemiológico durante la pandemia por SARS-CoV-2, atención a sobrevivientes de prisión política de 1973-74, y resolución de listas de espera ginecológicas. El total transferido, según el anexo del Oficio Final N°667-A de la Contraloría Regional, supera los $927 millones.
+          </p>
+
+          <p>
+            La investigación penal de la fiscalía, según informó Irribarra, se concentra en dos de esos convenios, por un monto conjunto avaluado en $778 millones.
+          </p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 <a href="index.html">Opinion Sur Multimedios</a>. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>
