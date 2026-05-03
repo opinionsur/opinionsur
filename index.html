@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Opinion Sur - Streaming en vivo"/>
+  <title>Opinion Sur - En Vivo</title>
+  
+  <!-- Video.js CSS -->
+  <link href="https://vjs.zencdn.net/8.6.1/video-js.css" rel="stylesheet" />
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+    .container {
+      max-width: 1200px;
+      width: 100%;
+      text-align: center;
+    }
+    
+    .logo h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    .logo p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+    
+    .video-container {
+      position: relative;
+      width: 100%;
+      background: #000;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      margin-bottom: 30px;
+    }
+    
+    .video-js {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16/9;
+    }
+    
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px 20px;
+      border-radius: 30px;
+      margin-bottom: 20px;
+      backdrop-filter: blur(10px);
+    }
+    
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      background: #ef4444;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.1; transform: scale(1.6); }
+    }
+    
+    .footer {
+      margin-top: 40px;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.9rem;
+    }
+    
+    @media (max-width: 768px) {
+      .logo h1 { font-size: 2rem; }
+      .logo p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Logo / Título -->
+    <div class="logo">
+      <h1>Opinion Sur</h1>
+      <p>Transmisión en vivo</p>
+    </div>
+    
+    <!-- Estado EN VIVO -->
+    <div class="status">
+      <span class="status-dot"></span>
+      <span>EN VIVO</span>
+    </div>
+    
+    <!-- Reproductor de Video HLS -->
+    <div class="video-container">
+      <video
+        id="my-video"
+        class="video-js vjs-big-play-centered vjs-fluid"
+        controls
+        preload="auto"
+        muted
+        autoplay
+        playsinline
+      >
+        <source 
+          src="https://183.bozztv.com/giatv/giatv-opinionsurc/opinionsurc/playlist.m3u8" 
+          type="application/x-mpegURL">
+        <p class="vjs-no-js">
+          Para ver este video, por favor habilita JavaScript y considera actualizar a un navegador web que 
+          <a href="https://videojs.com/html5-video-support/" target="_blank">soporte video HTML5</a>
+        </p>
+      </video>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+      <p>© 2026 Opinion Sur Multimedios</p>
+    </div>
+  </div>
+
+  <!-- Video.js Library -->
+  <script src="https://vjs.zencdn.net/8.6.1/video.min.js"></script>
+  
+  <script>
+    // Inicializar el reproductor
+    var player = videojs('my-video', {
+      html5: {
+        hls: {
+          enableLowInitialPlaylist: true,
+          smoothQualityChange: true
+        }
+      },
+      fluid: true,
+      responsive: true
+    });
+
+    // Manejar errores de carga
+    player.on('error', function() {
+      console.error('❌ Error al cargar el stream:', player.error());
+    });
+  </script>
+</body>
+</html>
